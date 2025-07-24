@@ -19,7 +19,7 @@ const Signup = () => {
       const result = await signUpNewUser(email, password); // Call context function
 
       if (result.success) {
-        navigate("/dashboard"); // Navigate to dashboard on success
+        navigate("/home"); // Navigate to dashboard on success
       } else {
         setError(result.error.message); // Show error message on failure
       }
@@ -32,16 +32,14 @@ const Signup = () => {
 
   return (
     <div>
-      <form onSubmit={handleSignUp} className="max-w-md m-auto pt-24">
-        <h2 className="font-bold pb-2">Sign up today!</h2>
-        <p>
-          Already have an account? <Link to="/">Sign in</Link>
-        </p>
+      <img src="src\images\image 8.png" alt="signin_image" className="mx-auto h-75"/>
+      <form onSubmit={handleSignUp} className="max-w-md m-auto pt-10">
+        <h2 className="font-bold text-5xl text-center">Sign up today!</h2>
         <div className="flex flex-col py-4">
           {/* <label htmlFor="Email">Email</label> */}
           <input
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 mt-2"
+            className="p-4 mt-2 rounded-xl border-2 border-[#DBE0E5]"
             type="email"
             name="email"
             id="email"
@@ -52,16 +50,19 @@ const Signup = () => {
           {/* <label htmlFor="Password">Password</label> */}
           <input
             onChange={(e) => setPassword(e.target.value)}
-            className="p-3 mt-2"
+            className="p-4 mt-2 rounded-xl border-2 border-[#DBE0E5]"
             type="password"
             name="password"
             id="password"
             placeholder="Password"
           />
         </div>
-        <button type="submit" disabled={loading} className="w-full mt-4">
+        <button type="submit" disabled={loading} className="w-full mt-4 text-white font-bold">
           Sign Up
         </button>
+        <p className="text-gray-400 text-center pt-4">
+          Already have an account? <Link to="/signin" className="text-[#0D80F2] hover:text-gray-900">Sign in</Link>
+        </p>
         {error && <p className="text-red-600 text-center pt-4">{error}</p>}
       </form>
     </div>

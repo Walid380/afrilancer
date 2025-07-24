@@ -35,16 +35,15 @@ const Signin = () => {
 
   return (
     <div>
-      <form onSubmit={handleSignIn} className="max-w-md m-auto pt-24">
-        <h2 className="font-bold pb-2">Sign in</h2>
-        <p>
-          Don't have an account yet? <Link to="/signup">Sign up</Link>
-        </p>
+      <img src="src\images\image 8.png" alt="signin_image" className="mx-auto h-75"/>
+      <form onSubmit={handleSignIn} className="max-w-md m-auto pt-10">
+        <h2 className="font-bold text-5xl text-center">Welcome Back</h2>
+        
         <div className="flex flex-col py-4">
           {/* <label htmlFor="Email">Email</label> */}
           <input
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 mt-2"
+            className="p-4 mt-2 rounded-xl border-2 border-[#DBE0E5]"
             type="email"
             name="email"
             id="email"
@@ -55,15 +54,19 @@ const Signin = () => {
           {/* <label htmlFor="Password">Password</label> */}
           <input
             onChange={(e) => setPassword(e.target.value)}
-            className="p-3 mt-2"
+            className="p-4 mt-2 rounded-xl border-2 border-[#DBE0E5]"
             type="password"
             name="password"
             id="password"
             placeholder="Password"
           />
         </div>
-        <button className="w-full mt-4">Sign In</button>
-        {error && <p className="text-red-600 text-center pt-4">{error}</p>}
+        <button className="w-full mt-4 text-white font-bold">Sign In</button>
+        <p className="text-gray-400 text-center pt-4">
+          Don't have an account yet? <Link to="/signup" className="text-[#0D80F2] hover:text-gray-900"> Sign up </Link>
+        </p>
+        {error && <p className="text-red-400 text-center pt-4">{error}</p>}
+        
       </form>
     </div>
   );
