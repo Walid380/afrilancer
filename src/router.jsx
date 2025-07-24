@@ -4,6 +4,7 @@ import Signup from "./components/Signup";
 import Signin from "./components/Signin";
 import Dashboard from "./routes/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
+import Home from "./pages/Home";
 
 export const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -14,6 +15,12 @@ export const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <Dashboard />
+      </PrivateRoute>
+    ),
+    path: "/home",
+    element: (
+      <PrivateRoute>
+        <Home />
       </PrivateRoute>
     ),
   },

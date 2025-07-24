@@ -13,9 +13,6 @@ npm install -g vite
 ```
 
 ```bash
-npm create vite@latest
-```
-```bash
 npm i react-router-dom
 ```
 
@@ -25,10 +22,6 @@ npm install @supabase/supabase-js
 
 ```bash
 npm install tailwindcss @tailwindcss/vite
-```
-
-```bash
-cd ./afrilancer
 ```
 
 ```bash
