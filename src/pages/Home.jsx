@@ -34,6 +34,8 @@ const Home = () => {
   console.log(session);
 
   return (
+    <>
+    <Navbar/>
     <div className="bg-gray-50 min-h-screen">
       <div className="text-center text-gray-500 mt-2 mb-2 text-sm">
         In association with Bitnob
@@ -54,6 +56,7 @@ const Home = () => {
       <h2 className="text-2xl font-bold text-center mb-8">Explore Categories</h2>
       <Categories categories={categories} />
     </div>
+    </>
   );
 };
 

@@ -11,10 +11,10 @@ const Navbar = () => (
     <div className="flex-1" />
     {/* Nav Links */}
     <nav className="flex gap-10 text-gray-700 font-medium mr-8">
-      <a href="#" className="hover:text-black">Home</a>
-      <a href="#" className="hover:text-black">Transactions</a>
-      <a href="#" className="hover:text-black">Services</a>
-      <a href="#" className="hover:text-black">About</a>
+      <a href="/home" className="hover:text-black">Home</a>
+      <a href="#" className="text-gray hover:text-black">Transactions</a>
+      <a href="#" className="text-gray hover:text-black">Services</a>
+      <a href="#" className="text-gray hover:text-black">About</a>
     </nav>
     {/* Avatar */}
     <img src="/vite.svg" alt="User" className="h-11 w-11 rounded-full object-cover border-2 border-gray-200" />
