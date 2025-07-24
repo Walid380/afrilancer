@@ -8,11 +8,8 @@ import { AuthContextProvider } from "./context/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <>
-      <h1 className="text-center text-3xl pt-4">Supabase Auth & Context</h1>
       <AuthContextProvider>
         <RouterProvider router={router} />
       </AuthContextProvider>
-    </>
   </StrictMode>
 );

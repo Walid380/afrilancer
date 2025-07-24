@@ -1,4 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+
 import Navbar from "../components/Navbar";
 import Categories from "../components/Categories";
 
@@ -14,6 +17,22 @@ const categories = [
 ];
 
 const Home = () => {
+  const { session, signOut } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async (e) => {
+    e.preventDefault();
+
+    try {
+      await signOut();
+      navigate("/");
+    } catch (err) {
+      setError("An unexpected error occurred."); // Catch unexpected errors
+    }
+  };
+  
+  console.log(session);
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="text-center text-gray-500 mt-2 mb-2 text-sm">
@@ -26,6 +45,11 @@ const Home = () => {
             <input type="text" placeholder="Search  for fields" className="bg-gray-100 outline-none w-full text-gray-700" />
           </div>
         </div>
+        <p onClick={handleSignOut}
+          className="hover:cursor-pointer  border inline-block text-red-400"
+        >
+          Sign out
+        </p>
       </div>
       <h2 className="text-2xl font-bold text-center mb-8">Explore Categories</h2>
       <Categories categories={categories} />
