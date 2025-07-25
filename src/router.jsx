@@ -40,10 +40,18 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/services/:category",
+    path: "/services",
     element: (
       <PrivateRoute>
-        <CategoryDetail />
+        <Services />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <PrivateRoute>
+        <Profile />
       </PrivateRoute>
     ),
   },

@@ -4,19 +4,13 @@ import logo from "../images/Logo.svg";
 import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { session, signOut } = UserAuth();
+  const { session } = UserAuth();
   const navigate = useNavigate();
 
-  const handleSignOut = async (e) => {
-    e.preventDefault();
-
-    try {
-      await signOut();
-      navigate("/");
-    } catch (err) {
-      setError("An unexpected error occurred."); // Catch unexpected errors
-    }
-  };
+const navigateToProfile = (e) => {
+  e.preventDefault();
+  navigate("/profile"); // Assuming your profile route is "/profile"
+};
 
   console.log(session);
 
@@ -40,7 +34,7 @@ const Navbar = () => {
       <Link to="/about" className=" hover:text-[#0D80F2]">About</Link>
     </nav>
     {/* Avatar */}
-    <img onClick={handleSignOut} src="/vite.svg" alt="User" className="h-11 w-11 rounded-full object-cover border-2 border-gray-200 hover:cursor-pointer" />
+    <img onClick={navigateToProfile} src="/vite.svg" alt="User" className="h-11 w-11 rounded-full object-cover border-2 border-gray-200 hover:cursor-pointer" />
   </header>);
 };
 
